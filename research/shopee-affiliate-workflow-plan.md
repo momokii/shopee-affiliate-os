@@ -1,7 +1,7 @@
 # Shopee Affiliate Organic Growth — End-to-End Workflow Plan
 Date: 2026-09-13
 Status: Ready to execute today
-Profile: from-zero Shopee Affiliate, 3–5 hrs/week, Threads+X + IG+TikTok available, fully faceless (no face, no voice). Niche decided: small-space home living / kos-kosan (see docs/choose-your-niche.md). Tracking decided: Google Sheets (see tracking/ + §5).
+Assumed operator profile: starting from zero on Shopee Affiliate, ~3–5 hrs/week alongside a day job, fully faceless (no face, no voice). Niche default: small-space home living / kos-kosan (re-decide via docs/choose-your-niche.md). Tracking default: Google Sheets (see tracking/ + §5). Adapt the profile to yours — the system holds as long as the cadence does.
 Operative reference: playbook summary in brief (X thread background only). Free-tier limits change fast — validate each at signup; links below are plain (no referrals).
 
 > Senior-growth-engineer verdict up front: do NOT build anything custom. A single Google Sheet + Shopee's own tagged links + a free scheduler covers 100% of what you need until you are doing >200 posts/month or running 3+ accounts. Custom Postgres is not justified at your scale. Details in §5.
@@ -47,8 +47,8 @@ With 3–5 hrs/week you cannot post 5x/day manually. You batch once, schedule, t
 
 ## 2. Content workflow — niche, format lock-in, repurposing
 
-### 2.1 Niche recommendation (for YOU specifically)
-You gave: faceless-only, beginner, gadgets/home-living + beauty interest, no strong preference.
+### 2.1 Niche recommendation (default — re-decide for yourself)
+Assumed profile for this default: faceless-only beginner with no strong niche preference.
 > Re-deciding for someone else (or your second account)? Use the framework, not the answer: `../docs/choose-your-niche.md`.
 
 Recommendation: **start with small-space home living / kos-kosan + cleaning-organization hacks** (sub-slice of gadgets/home living). Why:
@@ -108,9 +108,9 @@ Short form pasted here so you have it with the others; full rules in §6.
 
 ## 3. Scheduling / publishing
 
-Recommended: **Buffer free** to start. Why it wins for you: fastest Threads+X queue setup, simplest UI for a beginner, enough for 2/day batching at your volume. Connect Threads + X only in Phase 1; add IG + TikTok in Phase 4. Sign up directly at buffer.com under your own account — do NOT use referral shortlinks (including the `s.id/joinbuffer` link from the source thread); per your constraint, every tool account is created fresh under your own name, no exceptions.
+Recommended: **Buffer free** to start. Why it wins for this profile: fastest Threads+X queue setup, simplest UI for a beginner, enough for 2/day batching at this volume. Connect Threads + X only in Phase 1; add IG + TikTok in Phase 4. House rule: sign up directly at buffer.com under your own account — do NOT use referral shortlinks (including the `s.id/joinbuffer` link from the source thread). Every tool account is created fresh under your own name, no exceptions.
 
-Note on the source thread's other two links: (1) the "Threads-to-Carousel skill" Tally form is the creator's own lead-magnet form — skip it; prompt P4 in §2.4 already covers that repurposing workflow inside the LLM subs you own, with no data handed to a third party. (2) The "ChatGPT Go gratis 3 bulan" Shopee promo is redundant for you — you already hold a paid ChatGPT subscription, which outranks Go; no action needed.
+Note on the source thread's other two links: (1) the "Threads-to-Carousel skill" Tally form is the creator's own lead-magnet form — skip it; prompt P4 in §2.4 already covers that repurposing workflow inside any capable LLM, with no data handed to a third party. (2) The "ChatGPT Go gratis 3 bulan" Shopee promo is redundant if you already hold a paid ChatGPT subscription (which outranks Go); otherwise ignore it — nothing in this workflow needs it.
 
 Fallback order if Buffer free limits bite (validate inside each app, limits change quarterly): Publer free (3 accounts, 10 pending/account) → Metricool free (20 posts/mo total — tight, analytics fallback only). Later has no free plan (14-day trial only) — skip. Do not pay for any scheduler until one format is proven AND you are exceeding the free queue more than twice a month — that is the only upgrade trigger.
 
@@ -131,7 +131,7 @@ Practical notes:
 | Link-in-bio (IG/TikTok only) | Beacons free (alt: Linktree free) | Free page + basic analytics; custom domain is paid (skip it). | Beacons free gives more blocks (video/async) for faceless video funnel; Linktree free is fine if you prefer simpler. One page, ≤5 links. |
 | Carousel design | Canva free | Free templates + exports; some assets Pro-locked (avoid them). | Fastest non-designer path; 7-slide template reusable. Figma is overkill; Adobe Express free is viable alt. |
 | Faceless video edit | CapCut free (desktop+mobile) | Free edit/export; check current export/watermark & stock-audio licensing in-app. | Text-overlay + auto-captions + trending sounds fastest for no-voice workflow. VN free is the offline fallback. |
-| LLMs | Your Claude + GPT + GLM subs | Already owned. | Use Claude for drafting voice, GPT for variations at scale, GLM as overflow/batch. No new AI spend. |
+| LLMs | Any capable LLM (Claude / GPT / GLM) | Use what you have. | Drafting voice, variations at scale, overflow/batch. No new AI spend. |
 
 Explicitly NOT recommended now: any paid scheduler, paid link tracker (Bitly paid, etc. — Shopee tags already attribute; extra shorteners add breakage + cost), custom-built tracker, paid domain, paid stock sites.
 
@@ -182,8 +182,8 @@ Decision heuristics (defaults, override with your numbers): winner → 10 clones
 
 Not justified now (§5). If you ever outgrow Sheets (multi-account, auto-ingest need, >1 hr/mo manual joins sustained 3 months), build the smallest thing that works:
 
-- **DB: PostgreSQL** (non-negotiable per your constraint; also the right call: reliable JOINs on tag strings, CSV COPY ingest, free managed tiers).
-- **App: Next.js (TypeScript) + Drizzle (or Prisma) + PostgreSQL + shadcn/ui + Tailwind.** Rationale tied to YOUR constraints: (a) debuggability — one language end-to-end, Drizzle's typed inspectable SQL (or Prisma Studio) + Next dev overlay + Vercel/Node logs a beginner can read; (b) library richness — migrations + CSV ingest, shadcn/ui + TanStack Table (grids/pivots without building UI), Recharts (EPC views), NextAuth (later); (c) speed — CRUD + CSV upload + pivot page is a weekend scaffold, not a framework project. Hosting: Neon/Supabase Postgres free tier + Vercel free tier for validation; keep Shopee dashboard entry manual (no scraping — ToS/maintenance trap).
+- **DB: PostgreSQL** (the default if this is ever built: reliable JOINs on tag strings, CSV COPY ingest, free managed tiers).
+- **App: Next.js (TypeScript) + Drizzle (or Prisma) + PostgreSQL + shadcn/ui + Tailwind.** Rationale: (a) debuggability — one language end-to-end, Drizzle's typed inspectable SQL (or Prisma Studio) + Next dev overlay + Vercel/Node logs a beginner can read; (b) library richness — migrations + CSV ingest, shadcn/ui + TanStack Table (grids/pivots without building UI), Recharts (EPC views), NextAuth (later); (c) speed — CRUD + CSV upload + pivot page is a weekend scaffold, not a framework project. Hosting: Neon/Supabase Postgres free tier + Vercel free tier for validation; keep Shopee dashboard entry manual (no scraping — ToS/maintenance trap).
 - **Schema (if built):** `posts(post_id PK, posted_at, platform, account, format, template, topic, post_url, tag UNIQUE, product_url, views, likes, replies)` + `perf_rows(id PK, tag FK, date, clicks, orders, gmv, commission, status, import_batch)` + view `epc_by_tag`. That is the whole app. Anything bigger is over-engineering.
 
 Do not build this in Phase 0–5. Build it only on the trigger above.
@@ -232,7 +232,7 @@ Do not build this in Phase 0–5. Build it only on the trigger above.
 4. Create the Google Sheet with the 3 tabs + columns in §5 (10 min).
 5. Run P1 in Claude, save the idea bank to the Sheet (8 min).
 
-Self-review note: this plan was built from your operative playbook summary + your answers (from-zero, 3–5 hrs, faceless, Threads/X+IG/TT ready), then hardened against `research/shopee-affiliate-workflow-research.md` (69 primary-source citations, compiled 2026-09-13).
+Provenance: built from an organic-growth playbook for Shopee Affiliate (X thread, background reference only), specified for a from-zero, ~3–5 hrs/week, faceless operator, then hardened against `research/shopee-affiliate-workflow-research.md` (69 primary-source citations, compiled 2026-09-13). Defaults (niche, tracker, LLM) are marked wherever they appear — swap them for yours.
 
 ## Addendum A — Primary-source corrections applied (2026-09-13)
 1. Payout is WEEKLY (not monthly): <Rp500.000 via ShopeePay, ≥Rp500.000 via bank transfer, PPh 21/26 withheld, KTP/NPWP required before payout. Sources: Terms §§5.1–5.4.

@@ -156,7 +156,7 @@ A custom Postgres app was evaluated and **rejected**: Shopee already attributes 
 | Link-in-bio (Phase 4) | Beacons free (or Linktree free) | One page, ≤5 links |
 | Carousel design | Canva Free | Reusable 7-slide template |
 | Faceless video | CapCut Free | Text-overlay workflow, no voice needed |
-| Brain | Your Claude + GPT + GLM subs | Drafting (Claude), variations (GPT), overflow (GLM) |
+| Brain | Any capable LLM (Claude / GPT / GLM) | Drafting, variations, overflow — use what you have |
 
 Skipped on purpose: Later and Hootsuite (no free plan at all), Metricool free (20 posts/mo — too tight), paid trackers (Shopee tags already attribute), custom domain, stock sites.
 

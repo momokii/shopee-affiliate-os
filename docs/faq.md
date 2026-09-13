@@ -1,6 +1,6 @@
-# FAQ — real beginner questions, short answers
+# FAQ — beginner questions, short answers
 
-Distilled from actually setting this up. Each answer links to the doc that goes deeper.
+Collected from real setup runs. Each answer links to the doc that goes deeper.
 
 ## Money & account
 
@@ -41,7 +41,7 @@ New accounts that drop links week one get throttled — your tags get spent on s
 ## Tools
 
 **Buffer via the thread's `s.id` link, the Tally skill form, the ChatGPT-Go promo?**
-Buffer yes, but sign up directly at buffer.com — the `s.id` link is someone's referral and your rule is own-accounts-only. Tally form: skip, P4 covers it with no data handed over. Go promo: redundant, you already hold full ChatGPT. (Plan §3.)
+Buffer yes, but sign up directly at buffer.com under your own account — the `s.id` link is someone's referral, and the house rule is own-accounts-only. Tally form: skip, P4 covers it with no data handed over. Go promo: skip unless you hold no paid LLM at all (a paid ChatGPT outranks Go; nothing here needs it). (Plan §3.)
 
 **Later / Hootsuite / Metricool?**
 Later and Hootsuite have no free plan (trial only) — excluded. Metricool free exists but caps at 20 posts/month: analytics fallback only. Verdict table: plan §4, evidence: research §2.
