@@ -241,3 +241,27 @@ Self-review note: this plan was built from your operative playbook summary + you
 6. Scheduler verdict hardened: Buffer Free (3 channels, 10 queued/channel, Threads+X supported, Start Page link-in-bio included, first-comment scheduling NOT on free) is primary; Publer Free runner-up; Later and Hootsuite have NO free plan; Metricool Free caps at 20 posts/mo. Link-in-comment stays a 30-sec manual phone step on any free tier.
 7. Platform ceilings (first-party): Threads 500 chars / 250 posts + 1,000 replies per 24h / max 5 links per post; X free accounts 50 posts + 200 replies/day. No official Meta/X doc confirms in-feed link suppression — treat as unverified community lore; comments-only placement stands as risk hedge, not documented rule.
 8. Dashboard refreshes daily at 16:30 WIB, 1-year lookback, product ranking to 1,000 products, commission split (Xtra/Seller/MCN/Shopee). Category rate tables in blogs are unverified — only "up to 10% + unlimited XTRA" is official; read per-product rates in your own portal.
+
+## Appendix B — Check-in checklist (25 min, 2x/week) + warm-up starters
+
+Run this verbatim each check-in. No improvisation needed.
+
+- [ ] **5 min — queue health:** Buffer queue still ≥2 days deep? If not, generate the gap posts with P2 now.
+- [ ] **10 min — first-comment links:** every post published since last check-in gets its ONE tagged link as your own first comment/reply within the window. Copy the link from the Sheet (never retype the tag).
+- [ ] **5 min — replies:** answer every comment on your posts; drop 5–10 replies on in-niche accounts. No links in any reply except your own first comments.
+- [ ] **5 min — numbers:** record views/likes/replies per post in the Sheet. Any post >3x your median views → flag as winner candidate, feed to P3 immediately (do not wait for month-end).
+
+**Warm-up starters (days 1–7, link-free — copy, adapt, post):**
+
+1. Story/relatable: "Kamar kos 3x3 aku dulu gudang + kamar + dapur jadi satu. Yang pertama aku beresin bukan decluttering, tapi zonasi: tidur, masak, kerja. Besok aku spill urutannya."
+2. Practical list: "3 barang under 50rb yang paling sering direkomendasikan penghuni kos di kolom komentar: 1) gantungan tempel tanpa paku, 2) kotak transparan kecil, 3) lap microfiber 5-pack. Kalian nambahin apa?"
+3. Mistake post: "Kesalahan paling umum nata dapur sempit: beli storage dulu sebelum ngukur. Ukur lebar rak + tinggi kolong dulu, baru pilih wadahnya. Aku pernah salah beli 2x."
+
+## Appendix C — Troubleshooting (symptom → cause → fix)
+
+1. **0 clicks after 2 weeks of linked posts** → cause: links never seen (reach problem, not product problem). Fix: check views first — if views ~0, it's account/reach (warm-up skipped? links in post body? posting >3/day on a new account?). If views exist but clicks ~0, the comment link is missing/late or the post topic has no buying intent — move the comment inside 15 min and tighten topic-to-product match.
+2. **Views suddenly collapse** → cause: velocity or spam flag. Fix: drop to 1/day for a week, zero links for 3 days, only replies + value posts. Never mass-delete posts (looks worse).
+3. **Clicks exist, commission 0** → normal early on: commission counts only completed + validated orders; dashboard shows gross estimates first. Wait one full weekly payout cycle before judging. If persists 30 days with clicks, the traffic has no buying intent — change product category, keep the format.
+4. **Tag missing in Click Report** → cause: link generated with "Pakai Tag: Tidak", or tag retyped with a typo. Fix: regenerate with Ya + copy-paste; correct the Sheet row. Never reuse that broken tag.
+5. **Payout stuck / "Tertunda" / "Perlu Lengkapi"** → cause: almost always identity/bank docs (KTP/NPWP mismatch, account-name mismatch). Fix: re-check name match + doc status in dashboard, watch email. Money under Rp500rb goes to ShopeePay — verify ShopeePay KYC too.
+6. **Account warning / link removed** → cause: spam pattern (link in post body, DM blasting, mass-blast custom links) or prohibited product. Fix: stop all links 7 days, delete only the flagged post, re-read Terms §§5.2/6.3, resume at half velocity.

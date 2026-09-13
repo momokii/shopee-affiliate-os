@@ -178,8 +178,12 @@ Open unknowns (flagged, not fudged): per-category rate tables, individual-app st
 ```
 ads-app/
 ├── README.md                              ← you are here
+├── tracking/
+│   ├── posts.csv                          ← import to Sheets tab `posts` (has 1 example row — delete it)
+│   ├── links.csv                          ← import to Sheets tab `links`
+│   └── performance_import.csv             ← import to Sheets tab `performance_import`
 └── research/
-    ├── shopee-affiliate-workflow-plan.md     ← execute this
+    ├── shopee-affiliate-workflow-plan.md     ← execute this (Appendices B+C: check-in checklist + troubleshooting)
     └── shopee-affiliate-workflow-research.md ← evidence for this
 ```
 

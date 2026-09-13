@@ -1,0 +1,3 @@
+post_id,date_posted,platform,account,format,post_url,hook_first15words,template,topic,shopee_tag,shopee_product_url,views,likes,replies,notes
+T001,2026-09-21,th,a1,txt,,,,,,,,,,,EXAMPLE ROW - delete me. Warm-up posts (days 1-7) have no link: leave shopee_tag empty.
+T002,2026-09-22,th,a1,txt,https://www.threads.com/t/EXAMPLE,Dapur kos 2x1 meter aku akhirnya rapi,list3,organisasi dapur kos,th_a1_t002_txt,https://shopee.co.id/EXAMPLE-PASTE-YOUR-LINK,,,,,First real linked post. Tag copied from Shopee link tool - never retyped.

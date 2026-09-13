@@ -4,7 +4,9 @@
 .omo/
 
 # Personal / sensitive artifacts (never commit)
+# Exception: tracking/*.csv are import-ready TEMPLATES (example rows only), safe to commit.
 *.csv
+!tracking/*.csv
 exports/
 screenshots/
 *.xlsx
