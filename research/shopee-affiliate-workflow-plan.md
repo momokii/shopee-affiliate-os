@@ -107,7 +107,9 @@ Short form pasted here so you have it with the others; full rules in §6.
 
 ## 3. Scheduling / publishing
 
-Recommended: **Buffer free** to start. Why it wins for you: fastest Threads+X queue setup, simplest UI for a beginner, enough for 2/day batching at your volume. Connect Threads + X only in Phase 1; add IG + TikTok in Phase 4.
+Recommended: **Buffer free** to start. Why it wins for you: fastest Threads+X queue setup, simplest UI for a beginner, enough for 2/day batching at your volume. Connect Threads + X only in Phase 1; add IG + TikTok in Phase 4. Sign up directly at buffer.com under your own account — do NOT use referral shortlinks (including the `s.id/joinbuffer` link from the source thread); per your constraint, every tool account is created fresh under your own name, no exceptions.
+
+Note on the source thread's other two links: (1) the "Threads-to-Carousel skill" Tally form is the creator's own lead-magnet form — skip it; prompt P4 in §2.4 already covers that repurposing workflow inside the LLM subs you own, with no data handed to a third party. (2) The "ChatGPT Go gratis 3 bulan" Shopee promo is redundant for you — you already hold a paid ChatGPT subscription, which outranks Go; no action needed.
 
 Fallback order if Buffer free limits bite (validate inside each app, limits change quarterly): Publer free (3 accounts, 10 pending/account) → Metricool free (20 posts/mo total — tight, analytics fallback only). Later has no free plan (14-day trial only) — skip. Do not pay for any scheduler until one format is proven AND you are exceeding the free queue more than twice a month — that is the only upgrade trigger.
 
