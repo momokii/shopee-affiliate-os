@@ -187,20 +187,4 @@ No source code, no secrets, no credentials in this repo — by design. If Shopee
 
 ---
 
-## 11. If you upload this to GitHub (recommendation)
-
-**Recommended name:** `shopee-affiliate-os`
-
-**Recommended description:** `Low-maintenance operating system for Shopee Affiliate Indonesia: organic Threads-first content loop, AI prompt kit, Sheets tracking model, and primary-source research. 3–5 hrs/week, faceless, from zero.`
-
-Why this name: "OS" signals *system you run*, not a tool you install — which is exactly what this is. It's searchable (`shopee-affiliate` is the keyword people type), short, and doesn't overclaim income.
-
-Alternatives if taken: `shopee-affiliate-playbook-id`, `faceless-affiliate-os`.
-
-**Visibility:** keep it **Private** while your Sheet conventions, handles, and tags are evolving (first ~2 months). Flip to Public later if you want it as a portfolio artifact — an entry-level PM who ships a documented, sourced growth system stands out. Before going public, scrub any personal handles, bank/payout details, and real tags. No referral links anywhere in these files (checked) — keep it that way.
-
-Suggested repo hygiene on upload: this README at root, `research/` as-is, `.gitignore` for `*.csv` / exports / screenshots with personal data.
-
----
-
 *Disclaimer: side-income system, not financial advice. Commission rules, rates, and free-tier limits change — your own Shopee dashboard and each tool's pricing page override anything written here. Shopee, Threads, X, and all tool names are trademarks of their respective owners.*
