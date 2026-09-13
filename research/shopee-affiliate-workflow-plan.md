@@ -1,7 +1,7 @@
 # Shopee Affiliate Organic Growth — End-to-End Workflow Plan
 Date: 2026-09-13
 Status: Ready to execute today
-Profile: from-zero Shopee Affiliate, 3–5 hrs/week, Threads+X + IG+TikTok available, fully faceless (no face, no voice), niche TBD, tracking tool TBD
+Profile: from-zero Shopee Affiliate, 3–5 hrs/week, Threads+X + IG+TikTok available, fully faceless (no face, no voice). Niche decided: small-space home living / kos-kosan (see docs/choose-your-niche.md). Tracking decided: Google Sheets (see tracking/ + §5).
 Operative reference: playbook summary in brief (X thread background only). Free-tier limits change fast — validate each at signup; links below are plain (no referrals).
 
 > Senior-growth-engineer verdict up front: do NOT build anything custom. A single Google Sheet + Shopee's own tagged links + a free scheduler covers 100% of what you need until you are doing >200 posts/month or running 3+ accounts. Custom Postgres is not justified at your scale. Details in §5.
@@ -14,7 +14,7 @@ Operative reference: playbook summary in brief (X thread background only). Free-
 2. Every link is a Shopee-tagged custom link: `platform_account_content`.
 3. Clicks open a 7-day window: anything the clicker buys on Shopee in 7 days earns you commission (indirect sales). Per playbook — treat product choice as incidental, click volume as the lever. Verify current cookie/commission rules inside your own Affiliate dashboard on day one (Shopee changes rates by category and campaign period).
 4. Volume finds winners (~0.5% hit rate is the working model = ~1 in 200 posts pops). AI clones the winning *format* (hook/structure/emotion), not the topic. Winners get repurposed to carousel + faceless video because IG/TikTok have long-tail shelf life.
-5. Monthly: export Shopee report → paste into strict-numbers AI review → start/stop/continue.
+5. Monthly: copy Shopee dashboard numbers → strict-numbers AI review → start/stop/continue. (No CSV export exists — manual copy, ~10 min.)
 
 With 3–5 hrs/week you cannot post 5x/day manually. You batch once, schedule, then check in every few days for replies + stats. That is the whole design constraint below.
 
@@ -24,7 +24,7 @@ With 3–5 hrs/week you cannot post 5x/day manually. You batch once, schedule, t
 
 ### 1.1 Shopee Affiliate (your own account, no referrals)
 - [ ] Register at Shopee Affiliate Indonesia under your own Shopee account (app: Saya > Shopee Affiliates Program, or affiliate.shopee.co.id). Complete tax/bank/payout info. Note payout threshold + schedule shown in YOUR dashboard — do not trust screenshots from others.
-- [ ] Learn two screens on day one: (a) Custom link builder (where you paste a Shopee product URL and add tags/sub-ids), (b) Reports (clicks / orders / GMV / commission / status pending-approved-paid + export CSV). If either screen is missing, your account tier is not fully approved — stop and finish verification before posting.
+- [ ] Learn two screens on day one: (a) Custom link builder (where you paste a Shopee product URL and add tags — look for the "Pakai Tag: Ya" toggle), (b) Reports: `Laporan Performa` (Klik / Pesanan / Produk Terjual / Pesanan Rp / Komisi Kotor Rp) + `Laporan Klik` per tag. If either screen is missing, your account tier is not fully approved — stop and finish verification before posting.
 - [ ] Decide tag taxonomy NOW and never deviate. Format: lowercase, no spaces, max 3–4 segments:
   - `platform`: `th` (Threads), `x`, `ig`, `tt`, `fb`
   - `account`: e.g. `a1` (if you later add a second account, `a2`)
@@ -49,6 +49,7 @@ With 3–5 hrs/week you cannot post 5x/day manually. You batch once, schedule, t
 
 ### 2.1 Niche recommendation (for YOU specifically)
 You gave: faceless-only, beginner, gadgets/home-living + beauty interest, no strong preference.
+> Re-deciding for someone else (or your second account)? Use the framework, not the answer: `../docs/choose-your-niche.md`.
 
 Recommendation: **start with small-space home living / kos-kosan + cleaning-organization hacks** (sub-slice of gadgets/home living). Why:
 - Faceless-native (photos of rooms, hands-only demos, text lists — no face or skin trust needed). Beauty/skincare as a faceless beginner is high-friction: trust + skin-type claims + BPOM/claim risk + brutal competition.
@@ -61,7 +62,7 @@ Voice rule: genuinely useful or relatable, Bahasa Indonesia casual, never a sale
 ### 2.2 Operating cadence (3–5 hrs/week)
 - **Batch day (1x/week, ~2 hrs):** generate 10–14 text posts with AI (templates below), build Shopee tagged links (one per post), queue in Buffer (2/day Threads + mirror to X). Log every post in Sheet (30 sec each).
 - **Check-ins (2x/week, 20–30 min each):** post the scheduled first-comment link promptly if your scheduler cannot auto-post first comments; reply to comments; record views/likes/replies; note any outlier (>3x median views = candidate winner).
-- **Monthly (1 hr):** export Shopee CSV → run review prompt (§6) → decide start/stop/continue.
+- **Monthly (1 hr):** copy Shopee dashboard numbers → run review prompt (§6) → decide start/stop/continue.
 
 Volume math (honest): at 2/day you do ~56 text posts/month. At a 0.5% hit model that is ~0.3 hits/month early on — i.e., expect 2–3 months to find your first proven format. This is a consistency asset, not monthly salary. If after 150 posts you have zero outliers, the niche or hook family is wrong — change one variable, not everything.
 
@@ -126,7 +127,7 @@ Practical notes:
 |---|---|---|---|
 | Text scheduling (Threads+X) | Buffer free | Historically ~3 channels, ~10 queued/channel. Confirm now. | Simplest queue; Threads support mature. Publer free is the fallback; Metricool free (20/mo) is analytics-fallback only. Later has no free plan — skip. |
 | Analytics fallback | Metricool free | Historically ~50 posts/mo quota + per-post stats. Confirm now. | Best free analytics if Buffer stats feel thin. Not needed day one. |
-| Tracking DB | Google Sheets free | Effectively unlimited for this scale; 10M cells. | Lowest friction, CSV-friendly (Shopee exports are CSV), pivot-ready, no record caps that matter. Notion is prettier but slower for CSV joins; Airtable free has record caps that will annoy you by month 4–6. |
+| Tracking DB | Google Sheets free | Effectively unlimited for this scale; 10M cells. | Lowest friction, paste-friendly (dashboard numbers are hand-copied), pivot-ready, no record caps that matter. Notion is prettier but slower for joins; Airtable free has record caps that will annoy you by month 4–6. |
 | Link-in-bio (IG/TikTok only) | Beacons free (alt: Linktree free) | Free page + basic analytics; custom domain is paid (skip it). | Beacons free gives more blocks (video/async) for faceless video funnel; Linktree free is fine if you prefer simpler. One page, ≤5 links. |
 | Carousel design | Canva free | Free templates + exports; some assets Pro-locked (avoid them). | Fastest non-designer path; 7-slide template reusable. Figma is overkill; Adobe Express free is viable alt. |
 | Faceless video edit | CapCut free (desktop+mobile) | Free edit/export; check current export/watermark & stock-audio licensing in-app. | Text-overlay + auto-captions + trending sounds fastest for no-voice workflow. VN free is the offline fallback. |
@@ -139,7 +140,7 @@ Explicitly NOT recommended now: any paid scheduler, paid link tracker (Bitly pai
 ## 5. Tracking solution (no custom build justified)
 
 ### Verdict: use Google Sheets. Custom Postgres is NOT justified.
-Why existing tools win at your scale (<100 posts/mo, 1 person, Shopee CSV is the only data source, no API to integrate, no multi-user need):
+Why existing tools win at your scale (<100 posts/mo, 1 person, Shopee dashboard numbers hand-copied monthly, no API to integrate, no multi-user need):
 - Shopee already attributes by tag — you only need to JOIN your post log to Shopee's export on the tag string. That is a VLOOKUP/pivot, not an app.
 - Sheets handles 10k rows effortlessly; your year-one volume is ~700 posts. Airtable free record caps and Notion's weak CSV-join ergonomics are worse fits, though both *could* work.
 - A custom DB earns its keep only if: 3+ accounts × 10+ posts/day, or you need auto-ingest of Shopee reports via scraping/API (fragile, ToS-sensitive, maintenance burden that kills a side project). Revisit only when manual monthly joins take >1 hr/month AND income covers infra.
@@ -173,6 +174,7 @@ Constraints: modest side-income framing; no get-rich claims; no advice that viol
 ```
 
 Decision heuristics (defaults, override with your numbers): winner → 10 clones via P3 + 1 carousel + 1 video via P4; volume trap → keep format for views but swap comment-link product category once before killing; dead 30 days → stop, reallocate that slot to winner's template.
+> Never run P5 before? Read the fictional worked example first: `../docs/monthly-review-example.md`. Jargon check: `../docs/glossary.md`.
 
 ---
 
@@ -181,7 +183,7 @@ Decision heuristics (defaults, override with your numbers): winner → 10 clones
 Not justified now (§5). If you ever outgrow Sheets (multi-account, auto-ingest need, >1 hr/mo manual joins sustained 3 months), build the smallest thing that works:
 
 - **DB: PostgreSQL** (non-negotiable per your constraint; also the right call: reliable JOINs on tag strings, CSV COPY ingest, free managed tiers).
-- **App: Next.js (TypeScript) + Prisma + PostgreSQL + shadcn/ui + Tailwind.** Rationale tied to YOUR constraints: (a) debuggability — one language end-to-end, Prisma query log + Next dev overlay + Vercel/Node logs a beginner can read; (b) library richness — Prisma (migrations/CSV ingest), shadcn/ui + TanStack Table (grids/pivots without building UI), Recharts (EPC views), NextAuth (later); (c) speed — CRUD + CSV upload + pivot page is a weekend scaffold, not a framework project. Hosting: Neon/Supabase Postgres free tier + Vercel free tier for validation; keep Shopee CSV upload manual (no scraping — ToS/maintenance trap).
+- **App: Next.js (TypeScript) + Drizzle (or Prisma) + PostgreSQL + shadcn/ui + Tailwind.** Rationale tied to YOUR constraints: (a) debuggability — one language end-to-end, Drizzle's typed inspectable SQL (or Prisma Studio) + Next dev overlay + Vercel/Node logs a beginner can read; (b) library richness — migrations + CSV ingest, shadcn/ui + TanStack Table (grids/pivots without building UI), Recharts (EPC views), NextAuth (later); (c) speed — CRUD + CSV upload + pivot page is a weekend scaffold, not a framework project. Hosting: Neon/Supabase Postgres free tier + Vercel free tier for validation; keep Shopee dashboard entry manual (no scraping — ToS/maintenance trap).
 - **Schema (if built):** `posts(post_id PK, posted_at, platform, account, format, template, topic, post_url, tag UNIQUE, product_url, views, likes, replies)` + `perf_rows(id PK, tag FK, date, clicks, orders, gmv, commission, status, import_batch)` + view `epc_by_tag`. That is the whole app. Anything bigger is over-engineering.
 
 Do not build this in Phase 0–5. Build it only on the trigger above.
@@ -251,7 +253,7 @@ Run this verbatim each check-in. No improvisation needed.
 - [ ] **5 min — replies:** answer every comment on your posts; drop 5–10 replies on in-niche accounts. No links in any reply except your own first comments.
 - [ ] **5 min — numbers:** record views/likes/replies per post in the Sheet. Any post >3x your median views → flag as winner candidate, feed to P3 immediately (do not wait for month-end).
 
-**Warm-up starters (days 1–7, link-free — copy, adapt, post):**
+**Warm-up starters (days 1–7, link-free — copy, adapt, post; more in `../docs/content-examples.md`):**
 
 1. Story/relatable: "Kamar kos 3x3 aku dulu gudang + kamar + dapur jadi satu. Yang pertama aku beresin bukan decluttering, tapi zonasi: tidur, masak, kerja. Besok aku spill urutannya."
 2. Practical list: "3 barang under 50rb yang paling sering direkomendasikan penghuni kos di kolom komentar: 1) gantungan tempel tanpa paku, 2) kotak transparan kecil, 3) lap microfiber 5-pack. Kalian nambahin apa?"

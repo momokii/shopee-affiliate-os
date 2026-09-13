@@ -17,6 +17,19 @@ research/shopee-affiliate-workflow-research.md ← THE EVIDENCE. 69 primary-sour
 
 If you read nothing else, read **plan §§8 + 10** (phased plan + start-today list). Everything below in this README is a map, not a replacement.
 
+### Docs index — every guide, when to read it
+
+| Doc | Read it when |
+|---|---|
+| [research/shopee-affiliate-workflow-plan.md](research/shopee-affiliate-workflow-plan.md) | Always first — the executable system, prompt kit P1–P5, checklists, troubleshooting |
+| [research/shopee-affiliate-workflow-research.md](research/shopee-affiliate-workflow-research.md) | When you ask "says who?" — primary-source proof for every claim |
+| [docs/glossary.md](docs/glossary.md) | Jargon hits (EPC, Komisi Kotor, indirect, tag, warm-up…) — keep open in a tab |
+| [docs/choose-your-niche.md](docs/choose-your-niche.md) | Before committing to a niche, or opening a second account |
+| [docs/content-examples.md](docs/content-examples.md) | Blank page — copy-adapt-post warm-up + linked examples, carousel included |
+| [docs/monthly-review-example.md](docs/monthly-review-example.md) | Before your first P5 run — fictional worked join → verdicts |
+| [docs/faq.md](docs/faq.md) | Any "wait, how does X work?" moment — real setup questions, short answers |
+| [tracking/posts.csv](tracking/posts.csv), [tracking/links.csv](tracking/links.csv), [tracking/performance_import.csv](tracking/performance_import.csv) | Day one — import straight into Google Sheets, delete the marked example rows |
+
 ---
 
 ## 2. How the money works (the 30-second model)
@@ -38,6 +51,8 @@ Three facts that shape the whole strategy:
 | Per-item commission is tiny; indirect orders pay **half** rate | Optimize for **click volume**, not product picking. The product is nearly incidental. |
 | ~0.5% of posts "hit" (working model, practitioner heuristic — not official) | Consistency beats any single post. ~2/day scheduled is the engine. |
 | Shopee pays **weekly** (<Rp500rb via ShopeePay, ≥Rp500rb via bank, PPh tax withheld, KTP/NPWP required) | Monthly review is for *decisions*; money itself moves weekly. |
+
+New to the vocabulary? Keep the [glossary](docs/glossary.md) open in a tab.
 
 ---
 
@@ -75,7 +90,7 @@ Rules that are non-negotiable:
 2. **One post = one tagged link** (`platform_account_content`, e.g. `th_a1_t042_txt`). Reusing tags destroys attribution.
 3. **Fresh accounts warm up 7 days link-free** or get throttled.
 4. **Never claim you tested what you didn't.** Say "ratingnya paling stabil…" / "komentar pembeli banyak bilang…".
-5. **One niche, one template at a time** until 30 days of data. (Recommended start: small-space home living / kos-kosan hacks — faceless-native, impulse price band Rp20–150rb, carousel-friendly. Beauty is expansion lane #2.)
+5. **One niche, one template at a time** until 30 days of data. (Recommended start: small-space home living / kos-kosan hacks — faceless-native, impulse price band Rp20–150rb, carousel-friendly. Beauty is expansion lane #2. Framework: [choose-your-niche](docs/choose-your-niche.md). Stuck at a blank page? [content-examples](docs/content-examples.md).)
 
 ---
 
@@ -99,33 +114,33 @@ All five are paste-ready in the plan file. What each does:
 
 ```mermaid
 erDiagram
-    POSTS ||--o| PERF : "joined on tag string"
+    POSTS ||--o| PERF : "joined on shopee_tag"
     POSTS {
         string post_id PK
-        date posted_at
+        date date_posted
         string platform
         string format
         string template
-        string tag UK
+        string shopee_tag UK
         string post_url
         int views
     }
     PERF {
-        string tag FK
-        int clicks
-        int orders
-        float gmv
-        float commission
-        string status
+        string shopee_tag FK
+        int klik
+        int pesanan
+        float pesanan_rp
+        float komisi_kotor_rp
     }
 ```
+(Field names match [tracking/*.csv](tracking/posts.csv) exactly — the diagram shows the join columns; full column lists live in the CSV headers.)
 
 Three tabs in one Google Sheet (10M cells — your year-one ~700 rows is a rounding error):
 
 - **`posts`** — one row per post at scheduling time (30 sec/row).
 - **`links`** — optional product catalog (from Phase 4).
 - **`performance_import`** — monthly manual copy from Shopee's `Laporan Performa` (Klik, Pesanan, Produk Terjual, Pesanan Rp, Komisi Kotor Rp; refreshes 16:30 WIB). No official CSV export exists — anyone telling you otherwise is describing a different program.
-- **Monthly view:** pivot `platform × format × template` → clicks, orders, commission, **EPC (commission ÷ clicks)**. EPC per tag drives START/STOP/CONTINUE.
+- **Monthly view:** pivot `platform × format × template` → clicks, orders, commission, **EPC (commission ÷ clicks)**. EPC per tag drives START/CONTINUE/STOP. First time? Walk the [fictional worked example](docs/monthly-review-example.md) before touching real numbers.
 
 A custom Postgres app was evaluated and **rejected**: Shopee already attributes by tag, so all you need is a VLOOKUP, not software. Revisit only if manual joins cost >1 hr/month for 3 straight months (triggers + fallback stack in plan §7).
 
@@ -152,10 +167,21 @@ Skipped on purpose: Later and Hootsuite (no free plan at all), Metricool free (2
 - [ ] **20 min** — Register Shopee Affiliate under your own account; open the link-builder + `Laporan Performa` screens; screenshot payout/tax panel.
 - [ ] **2 min** — Write down your tag convention: `th_a1_t001_txt`. Never deviate.
 - [ ] **20 min** — Create Threads + X faceless accounts; post 1 link-free value post each (warm-up starts today).
-- [ ] **10 min** — Create the Google Sheet (`posts` / `links` / `performance_import`) from plan §5.
+- [ ] **10 min** — Create the Google Sheet: import [tracking/posts.csv](tracking/posts.csv), [tracking/links.csv](tracking/links.csv), [tracking/performance_import.csv](tracking/performance_import.csv) as three tabs, delete the marked example rows.
 - [ ] **8 min** — Run **P1** in Claude; save the idea bank to the Sheet.
 
 Then follow **Phase 0 → 5** in the plan: setup → manual text loop (60–100 posts, find one 3x winner) → tracking live → AI-clone the winner → repurpose winners → monthly cadence.
+
+### What the next 90 days look like
+
+| When | Done looks like | Money |
+|---|---|---|
+| Day 7 | Warm-up complete, Sheet live, 5–10 tagged links banked (unposted) | Rp0 — expected |
+| Day 30 | 40–60 posts logged, first dashboard copy done, P5 practiced on thin data | ~Rp0 — expected |
+| Day 60–90 | 100–150 posts, first winner hunt active (P3 at first >3x outlier) | First small weekly payouts possible |
+| Month 4+ | One proven template scaled + repurposed, monthly cadence running | Modest, hopefully consistent |
+
+Stuck anywhere along the way? [FAQ](docs/faq.md) first, plan Appendix C second.
 
 ---
 
@@ -177,9 +203,15 @@ Open unknowns (flagged, not fudged): per-category rate tables, individual-app st
 
 ```
 ads-app/
-├── README.md                              ← you are here
+├── README.md                              ← you are here (hub — every doc linked from §1)
+├── docs/
+│   ├── glossary.md                        ← jargon table (EPC, indirect, tag, warm-up…)
+│   ├── choose-your-niche.md               ← 5-criteria framework + 3 niches scored + validation
+│   ├── content-examples.md                ← warm-up + linked posts + carousel, copy-ready
+│   ├── monthly-review-example.md          ← fictional P5 walkthrough (join → verdicts)
+│   └── faq.md                             ← real setup questions, short answers
 ├── tracking/
-│   ├── posts.csv                          ← import to Sheets tab `posts` (has 1 example row — delete it)
+│   ├── posts.csv                          ← import to Sheets tab `posts` (1 example row — delete it)
 │   ├── links.csv                          ← import to Sheets tab `links`
 │   └── performance_import.csv             ← import to Sheets tab `performance_import`
 └── research/

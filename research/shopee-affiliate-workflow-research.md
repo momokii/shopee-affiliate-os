@@ -120,12 +120,12 @@ Source: [notion.com/pricing](https://www.notion.com/pricing) (live page):
 Source: [airtable.com/pricing](https://airtable.com/pricing) (live page): Free plan exists ("formulated for individual users, very small teams, or those with lightweight needs"), per-seat billing above it (Team $20/user/mo annual); FAQ confirms overage behavior (can't add records past limit; data never deleted).
 - ⚠️ **UNVERIFIED:** Airtable's pricing page does **not state** its free record/attachment caps (historically 1,000 records/base, but not printed on the page I fetched — do not rely without checking [support.airtable.com billing overview](https://support.airtable.com/docs/airtable-billing-overview)). For a monthly-updated log this is unlikely to bite within year one, but it's an avoidable risk.
 
-### 3.4 Minimal data model (sized to need)
-Three tables, all in one spreadsheet:
-1. **posts** — `post_id (PK)`, `publish_date`, `platform` (threads/ig/tiktok), `format` (text/carousel/video), `content_angle` (value/hook type), `text_snippet`, `link_id (FK)`, `scheduled_via` (buffer/manual), `notes`.
-2. **links_tags** — `link_id (PK)`, `product_name`, `product_url`, `shopee_affiliate_url`, `tag_platform`, `tag_account`, `tag_content`, `created_date`. *(Tags here are your own bookkeeping mirror of the Shopee tag parameter — see §1.5 caveat that Shopee doesn't document tag limits.)*
-3. **perf_import** — `import_date`, `period_start`, `period_end`, `link_id` or `post_id`, `klik`, `pesanan`, `produk_terjual`, `pesanan_rp`, `komisi_kotor_rp`, `source` (dashboard copy date/time, noting the 16:30 WIB refresh).
-Join: monthly `perf_import` → `posts` via `link_id`/`post_id`; compute click→order rate per post and per angle. This mirrors exactly the dashboard columns the official report exposes (§1.4) — nothing more is needed.
+### 3.4 Minimal data model (sized to need) — canonical definition lives in plan §5; import-ready templates in `tracking/`
+Three tabs, all in one spreadsheet, mirroring exactly the dashboard columns the official report exposes (§1.4):
+1. **posts** — `post_id (PK)`, `date_posted`, `platform` (th/x/ig/tt), `account`, `format` (txt/car/vid), `post_url`, `hook_first15words`, `template`, `topic`, `shopee_tag (UK, exact string)`, `shopee_product_url`, `views`, `likes`, `replies`, `notes`.
+2. **links** — `shopee_tag (PK)`, `product_name`, `product_url`, `price_band`, `category`. (Your own bookkeeping mirror of the Shopee tag parameter — see §1.5 caveat that Shopee doesn't document tag limits.)
+3. **performance_import** — `month`, `shopee_tag (FK)`, `klik`, `pesanan`, `produk_terjual`, `pesanan_rp`, `komisi_kotor_rp`, `post_id` (VLOOKUP from tag), `notes`, plus the copy date/time (dashboard refreshes 16:30 WIB).
+Join: monthly `performance_import` → `posts` via `shopee_tag`; pivot by platform × format × template → clicks, orders, commission, EPC. Nothing more is needed.
 
 ### 3.5 Is a custom Postgres tool justified? **NO (for now).**
 Arguments against building now: (a) data volume is ~10³ rows/year vs Sheets' 10⁷-cell capacity ([Google limits](https://support.google.com/drive/answer/37603)); (b) the only ingest path is **manual** (no official Shopee CSV/API for individual affiliates — §1.4 caveat), so software adds zero automation; (c) maintenance burden (auth, hosting, backups) is pure drag on a side project; (d) AI analysis of a monthly raw report works on pasted text regardless of storage.
