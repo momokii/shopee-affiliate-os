@@ -21,12 +21,13 @@ If you read nothing else, read **plan §§8 + 10** (phased plan + start-today li
 
 | Doc | Read it when |
 |---|---|
-| [research/shopee-affiliate-workflow-plan.md](research/shopee-affiliate-workflow-plan.md) | Always first — the executable system, prompt kit P1–P5, checklists, troubleshooting |
+| [research/shopee-affiliate-workflow-plan.md](research/shopee-affiliate-workflow-plan.md) | Always first — the executable system, prompt kit P0–P7, checklists, troubleshooting |
 | [research/shopee-affiliate-workflow-research.md](research/shopee-affiliate-workflow-research.md) | When you ask "says who?" — primary-source proof for every claim |
 | [docs/glossary.md](docs/glossary.md) | Jargon hits (EPC, Komisi Kotor, indirect, tag, warm-up…) — keep open in a tab |
 | [docs/choose-your-niche.md](docs/choose-your-niche.md) | Before committing to a niche, or opening a second account |
 | [docs/content-examples.md](docs/content-examples.md) | Blank page — copy-adapt-post warm-up + linked examples, carousel included |
 | [docs/monthly-review-example.md](docs/monthly-review-example.md) | Before your first P5 run — fictional worked join → verdicts |
+| [docs/prompt-library.md](docs/prompt-library.md) | The 8 prompts P0–P7, canonical blocks + WHEN/INPUTS/OUTPUT/INTERPRET guides |
 | [docs/faq.md](docs/faq.md) | Any "wait, how does X work?" moment — real setup questions, short answers |
 | [tracking/posts.csv](tracking/posts.csv), [tracking/links.csv](tracking/links.csv), [tracking/performance_import.csv](tracking/performance_import.csv) | Day one — import straight into Google Sheets, delete the marked example rows |
 
@@ -96,15 +97,18 @@ Rules that are non-negotiable:
 
 ## 5. AI prompt kit (where the leverage is)
 
-All five are paste-ready in the plan file. What each does:
+Full blocks + usage guides (trigger, exact inputs with examples, expected output, how to interpret) live canonically in the [prompt library](docs/prompt-library.md). Map:
 
 | Prompt | When | Job |
 |---|---|---|
-| P1 — pain-point + idea bank | Once per niche + monthly refresh | 15 pains → 30 post angles + Shopee search keywords |
-| P2 — weekly batch | Every batch day | 12 posts (<400 chars), mixed story/list/mistake, no link in body |
-| P3 — format lock-in ⭐ | Only on a >3x-median winner | Reverse-engineer hook/structure/emotion → 10 new posts in the same template |
+| P0 — niche validation | Starting / second account | Score 3 candidates → 10-pain test → go/no-go |
+| P1 — pain-point + idea bank | Niche chosen + monthly refresh | 15 pains → 30 post angles + Shopee search keywords |
+| P2 — weekly batch | Every batch day | 12 posts (<400 chars) + keyword + first-comment line each |
+| P3 — format lock-in ⭐ | Only on a >3x-median winner | Reverse-engineer hook/structure/emotion → 10 clones, same template |
 | P4 — repurpose | Only on proven winners | 7-slide carousel + 20–30s faceless video from the same hook |
 | P5 — monthly review | Monthly | Strict-numbers join of posts × Shopee data → START/CONTINUE/STOP + 5 next actions |
+| P6 — flop autopsy | 5+ dead posts / monthly | Per-flop diagnosis + 1 rewrite each + shared pattern |
+| P7 — reply drafts | Daily engagement | 3 in-voice reply options, no links |
 
 ⭐ P3 is the money workflow. Everything else exists to feed it winners.
 
@@ -209,6 +213,7 @@ ads-app/
 │   ├── choose-your-niche.md               ← 5-criteria framework + 3 niches scored + validation
 │   ├── content-examples.md                ← warm-up + linked posts + carousel, copy-ready
 │   ├── monthly-review-example.md          ← fictional P5 walkthrough (join → verdicts)
+│   ├── prompt-library.md                  ← canonical P0–P7 blocks + usage guides
 │   └── faq.md                             ← real setup questions, short answers
 ├── tracking/
 │   ├── posts.csv                          ← import to Sheets tab `posts` (1 example row — delete it)

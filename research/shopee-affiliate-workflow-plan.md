@@ -60,7 +60,7 @@ Recommendation: **start with small-space home living / kos-kosan + cleaning-orga
 Voice rule: genuinely useful or relatable, Bahasa Indonesia casual, never a sales pitch in the post body. No "aku sudah coba" unless you actually bought it. Compliant alternative: "yang ratingnya paling stabil di kategori ini…" / "komentar pembeli banyak bilang…".
 
 ### 2.2 Operating cadence (3–5 hrs/week)
-- **Batch day (1x/week, ~2 hrs):** generate 10–14 text posts with AI (templates below), build Shopee tagged links (one per post), queue in Buffer (2/day Threads + mirror to X). Log every post in Sheet (30 sec each).
+- **Batch day (1x/week, ~2 hrs):** run library P1→P2 for 10–14 text posts, build Shopee tagged links (one per post), queue in Buffer (2/day Threads + mirror to X). Log every post in Sheet (30 sec each).
 - **Check-ins (2x/week, 20–30 min each):** post the scheduled first-comment link promptly if your scheduler cannot auto-post first comments; reply to comments; record views/likes/replies; note any outlier (>3x median views = candidate winner).
 - **Monthly (1 hr):** copy Shopee dashboard numbers → run review prompt (§6) → decide start/stop/continue.
 
@@ -70,39 +70,18 @@ Volume math (honest): at 2/day you do ~56 text posts/month. At a 0.5% hit model 
 - Post body: NEVER contains a URL. Platforms suppress outbound-link posts.
 - First comment/reply (your own account, within 15–60 min of posting): 1 line context + tagged link. Example: "yang aku maksud yang model gini btw: [tagged link]". One link per post. No link-stuffing, no DM spam, no shortening tricks that hide the Shopee domain.
 
-### 2.4 Ready-to-paste AI prompt templates (works in Claude / GPT / GLM)
+### 2.4 AI prompts (full text + usage guides: `../docs/prompt-library.md` — canonical, this file wins on any difference)
 
-**P1 — Pain-point + idea bank (run once per niche, then monthly refresh)**
-```
-Context: I run a faceless Threads/X account in Indonesia, niche: small-space home living / kos-kosan organization & cleaning hacks. Audience: anak kos + young families, budget-conscious, shops on Shopee. Posts are plain text, no sales pitch, link only in comments.
-Task: (1) List 15 specific pain points this audience complains about in their own words. (2) For each, give 2 post angles (story/relatable + practical list). (3) Output as a table: Pain | Angle A | Angle B | Shopee search keyword to find a matching product.
-Constraints: everyday Bahasa Indonesia, no medical/claim language, no product I must claim to have personally tested. Ideas must be filmable later as text-only, carousel, or hands-only video.
-```
+| # | Prompt | Trigger |
+|---|---|---|
+| P0 | Niche validation (score 3 candidates, 10-pain test) | Starting, or opening a second account |
+| P1 | Pain-point + idea bank (15 pains → 30 angles + keywords) | Niche chosen; refresh monthly |
+| P2 | Weekly batch (12 posts + per-post keyword + first-comment line) | Every batch day |
+| P3 | Format lock-in (reverse-engineer winner → 10 clones) ⭐ | A post beats median views >3x |
+| P4 | Repurpose winner (7-slide carousel + faceless video shot list) | Holding a P3 analysis, winners only |
+| P7 | Reply drafts (3 in-voice options, no links) | Daily engagement |
 
-**P2 — Weekly batch ideation (10–14 posts)**
-```
-Context: [paste your 2–3 best past posts + views, or say "new account, no data yet, use P1 bank"].
-Task: Write 12 Threads posts, each under 400 characters, Bahasa Indonesia casual. Mix: 4 relatable stories, 4 practical lists/tips, 4 "mistake I see people make" posts. Each ends with a soft loop (question or "part 2?") but NO link, NO CTA to buy, NO "link di komen".
-For each post add: (a) suggested Shopee search keyword for the comment link, (b) 1-line first-comment text to accompany the link later.
-```
-
-**P3 — Format lock-in: reverse-engineer a winner, clone x10 (THE key workflow — run only when a post does >3x your median views)**
-```
-This post outperformed (views: [N], median: [M]): "[paste winning post text]".
-Task: (1) Reverse-engineer WHY it worked: hook pattern (first 15 words), structure (lines, breaks, list vs story), emotional trigger, specificity, open loop. Be concrete, quote the mechanism. (2) Extract the abstract template in 3–5 slots, e.g. HOOK + RELATABLE SETUP + 3 ITEMS + LOOP. (3) Write 10 NEW posts in the SAME template but DIFFERENT topics from my idea bank (no repetition). Each under 400 chars, Bahasa Indonesia, no link in body. (4) For each: 1-line first-comment text + Shopee search keyword.
-Constraint: do not change the template's rhythm. Same line breaks, same length band, same POV.
-```
-
-**P4 — Repurpose winner to carousel + faceless video (run only for proven winners)**
-```
-Winner post: "[paste]". Proven hook: "[paste P3 analysis]".
-Task A (IG carousel, 7 slides): Slide 1 = hook (max 8 words, curiosity, same promise as winner). Slides 2–6 = one idea per slide, max 18 words each, plain words. Slide 7 = soft closer + "detail contohnya aku taruh di komen/bio". Provide Canva-ready text per slide + visual note (hands-only / room photo / icon; no face, no voice).
-Task B (TikTok/Reels, 20–30s, fully faceless, NO voiceover): 6–8 shots, each with on-screen text (max 6 words) + shot description (close-up hands, before/after, screen record of Shopee listing). Suggest pacing (cuts every 3s) + caption + hashtag set (5 niche + 2 broad ID). No spoken lines, trending instrumental audio assumed.
-Same hook, same structure, new format. Do not invent claims ("terbukti", "aku pakai 2 tahun") unless I confirm.
-```
-
-**P5 — Monthly performance review (strict numbers — see §6 for full version)**
-Short form pasted here so you have it with the others; full rules in §6.
+P5 (monthly review) is in §6 + library. P6 (flop autopsy) runs monthly alongside P5. Each library entry documents WHEN, exact INPUTS with examples, the paste block, expected OUTPUT, and how to INTERPRET it — read the guide before first use of each prompt.
 
 ---
 
@@ -165,13 +144,7 @@ Rules: tag strings must match EXACTLY (no retyping — copy-paste from Shopee to
 
 Cadence: monthly for decisions (Shopee statuses settle slowly: pending→approved), with a 5-min mid-month sanity glance (any outlier → feed to P3 immediately, do not wait).
 
-**P5 — full monthly review prompt (paste with your CSV):**
-```
-You are my performance analyst. DATA FOLLOWS. Use ONLY the real numbers below — never estimate, never invent, never round into claims. If a field is missing, say "missing" and exclude it from that calculation.
-[Paste: (a) posts tab rows for the month (post_id, platform, format, template, tag, views/likes/replies), (b) Shopee export rows (tag, clicks, orders, GMV, commission, status). State the month + status mix (how much is still pending).]
-Task: (1) Join on tag. Report per platform×format×template: posts, clicks, orders, GMV, commission (split approved vs pending), EPC, click-through proxy (clicks/views where views exist). (2) Flag winners (>3x median views AND top-quartile EPC) vs volume traps (high views, ~0 commission) vs dead (bottom-quartile both). (3) Recommend START (double down with P3+P4), CONTINUE (hold volume), STOP (pause this template/platform for 30 days) — one line each with the number that justifies it. (4) List exactly what to do next week (max 5 actions). End with: "Assumptions I did NOT make:" + open data gaps.
-Constraints: modest side-income framing; no get-rich claims; no advice that violates platform spam rules or requires false testimonials.
-```
+**P5 — full prompt, usage guide, and a fictional worked example:** canonical block in `../docs/prompt-library.md#P5`, walkthrough in `../docs/monthly-review-example.md`. Paste only real Sheet + dashboard numbers; the library documents exactly which fields go in and how to read each verdict line.
 
 Decision heuristics (defaults, override with your numbers): winner → 10 clones via P3 + 1 carousel + 1 video via P4; volume trap → keep format for views but swap comment-link product category once before killing; dead 30 days → stop, reallocate that slot to winner's template.
 > Never run P5 before? Read the fictional worked example first: `../docs/monthly-review-example.md`. Jargon check: `../docs/glossary.md`.
