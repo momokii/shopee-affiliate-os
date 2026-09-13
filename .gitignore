@@ -1,0 +1,10 @@
+# Agent / tooling internals (never commit)
+.claude/
+.codegraph
+.omo/
+
+# Personal / sensitive artifacts (never commit)
+*.csv
+exports/
+screenshots/
+*.xlsx
