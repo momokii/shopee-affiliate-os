@@ -39,7 +39,7 @@ With 3–5 hrs/week you cannot post 5x/day manually. You batch once, schedule, t
 - [ ] Warm-up (days 1–7): no links at all. Post 1–2 value posts/day, reply 5–10x/day in-niche. Goal is to look like a real person to the algorithm before you ever drop a link. New accounts that post links on day one get throttled — this is the most common beginner kill.
 
 ### 1.3 Scheduler + tracker + link-in-bio (all free tier, validate at signup)
-- [ ] Scheduler: start with Buffer free (simplest) — connect Threads + X first. Verify current free limits inside the app before you commit (historically ~3 channels + ~10 queued posts per channel; limits change). If Buffer free no longer covers Threads, fallback order: Metricool free → Later free → Publer free. Pick ONE; do not multi-tool.
+- [ ] Scheduler: start with Buffer free (simplest) — connect Threads + X first. Verify current free limits inside the app before you commit (historically ~3 channels + ~10 queued posts per channel; limits change). If Buffer free no longer covers Threads, fallback order: Publer free → Metricool free (Later has no free plan — trial only, skip it). Pick ONE; do not multi-tool.
 - [ ] Tracker: one Google Sheet (see §5). Create it now, before your first linked post.
 - [ ] Link-in-bio (only for IG/TikTok phase): one Beacons free page (or Linktree free). One page, max 5 links. You do not need a custom domain.
 
@@ -109,7 +109,7 @@ Short form pasted here so you have it with the others; full rules in §6.
 
 Recommended: **Buffer free** to start. Why it wins for you: fastest Threads+X queue setup, simplest UI for a beginner, enough for 2/day batching at your volume. Connect Threads + X only in Phase 1; add IG + TikTok in Phase 4.
 
-Fallback order if Buffer free limits bite (validate inside each app, limits change quarterly): Metricool free (often more generous monthly quota + better analytics) → Later free → Publer free. Do not pay for any scheduler until one format is proven AND you are exceeding the free queue more than twice a month — that is the only upgrade trigger.
+Fallback order if Buffer free limits bite (validate inside each app, limits change quarterly): Publer free (3 accounts, 10 pending/account) → Metricool free (20 posts/mo total — tight, analytics fallback only). Later has no free plan (14-day trial only) — skip. Do not pay for any scheduler until one format is proven AND you are exceeding the free queue more than twice a month — that is the only upgrade trigger.
 
 Practical notes:
 - Schedulers sometimes cannot auto-post the *first comment* on Threads/X. Assume YOU post the first-comment link manually during check-ins. This is why check-ins exist.
@@ -122,7 +122,7 @@ Practical notes:
 
 | Need | Pick | Free tier (verify in-app; changes often) | Why this over alternatives |
 |---|---|---|---|
-| Text scheduling (Threads+X) | Buffer free | Historically ~3 channels, ~10 queued/channel. Confirm now. | Simplest queue; Threads support mature. Metricool free is the fallback if you need more quota/analytics. Later/Publer free are narrower on Threads. Hootsuite free effectively gone — skip. |
+| Text scheduling (Threads+X) | Buffer free | Historically ~3 channels, ~10 queued/channel. Confirm now. | Simplest queue; Threads support mature. Publer free is the fallback; Metricool free (20/mo) is analytics-fallback only. Later has no free plan — skip. |
 | Analytics fallback | Metricool free | Historically ~50 posts/mo quota + per-post stats. Confirm now. | Best free analytics if Buffer stats feel thin. Not needed day one. |
 | Tracking DB | Google Sheets free | Effectively unlimited for this scale; 10M cells. | Lowest friction, CSV-friendly (Shopee exports are CSV), pivot-ready, no record caps that matter. Notion is prettier but slower for CSV joins; Airtable free has record caps that will annoy you by month 4–6. |
 | Link-in-bio (IG/TikTok only) | Beacons free (alt: Linktree free) | Free page + basic analytics; custom domain is paid (skip it). | Beacons free gives more blocks (video/async) for faceless video funnel; Linktree free is fine if you prefer simpler. One page, ≤5 links. |
