@@ -187,6 +187,19 @@ Then follow **Phase 0 → 5** in the plan: setup → manual text loop (60–100 
 
 Stuck anywhere along the way? [FAQ](docs/faq.md) first, plan Appendix C second.
 
+### The full journey Phase 0 → 5 (detail: plan §8)
+
+| Phase | Goal | Move on when | Lives in |
+|---|---|---|---|
+| 0 — Setup (week 1) | Affiliate + bank/ID docs, tag convention, Threads+X accounts warming, Buffer + Sheet live | Test tagged link sits in your Sheet | Plan §1 + §10 |
+| 1 — First loop (weeks 2–5) | 1–2 text posts/day, links in first comments from day 8, every post logged | 60–100 posts logged OR first >3x-median winner | Prompts [P1](docs/prompt-library.md#p1--pain-point--idea-bank) + [P2](docs/prompt-library.md#p2--weekly-batch-ideation-1014-posts), [examples](docs/content-examples.md) |
+| 2 — Tracking live | Monthly dashboard copy → pivot tags → clicks/commission | One pivot table exists | Plan §5, [worked example](docs/monthly-review-example.md) |
+| 3 — AI scaling | Clone the winner's template ×10, one template at a time | 10+ clones scheduled | Prompt [P3](docs/prompt-library.md#p3--format-lock-in-reverse-engineer-a-winner-clone-x10-) |
+| 4 — Repurpose | Carousel + faceless video per proven winner only | 2–3 winners repurposed + logged | Prompt [P4](docs/prompt-library.md#p4--repurpose-winner-to-carousel--faceless-video) |
+| 5 — Cadence (ongoing) | Weekly batch + 2 check-ins + monthly P5 | It runs without thinking | Plan App. B, prompt [P5](docs/prompt-library.md#p5--monthly-performance-review-strict-numbers) |
+
+Losers get autopsies ([P6](docs/prompt-library.md#p6--flop-autopsy-the-inverse-of-p3)), replies get drafts ([P7](docs/prompt-library.md#p7--reply-drafts-daily-engagement-10-min)), jargon gets the [glossary](docs/glossary.md). That is the entire system — everything else is detail behind the links.
+
 ---
 
 ## 9. What the research proved (and corrected)
